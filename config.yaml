@@ -1,0 +1,11 @@
+paths:
+  data_dir: './data/processed/'
+  model_dir: './checkpoints/'
+  log_dir: './logs/'
+
+hyperparameters:
+  latent_dim: 100
+  batch_size: 64
+  epochs: 5000
+  learning_rate: 0.0002
+ 

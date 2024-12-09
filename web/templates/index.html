@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StyleGAN Face Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        input, button {
+            padding: 10px;
+            margin: 5px;
+        }
+        img {
+            margin-top: 20px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <h1>StyleGAN Face Generator</h1>
+    <form id="generateForm">
+        <input type="text" id="name" placeholder="Enter your name" required />
+        <button type="button" onclick="generateFace()">Generate Face</button>
+    </form>
+    <div id="result">
+        <img id="faceImage" src="" alt="Generated Face" style="display: none;" />
+    </div>
+
+    <script>
+        async function generateFace() {
+            const name = document.getElementById('name').value;
+            if (!name) {
+                alert('Please enter a name.');
+                return;
+            }
+
+            const response = await fetch(`/generate_face?name=${encodeURIComponent(name)}`);
+            if (response.ok) {
+                const blob = await response.blob();
+                const url = URL.createObjectURL(blob);
+                const img = document.getElementById('faceImage');
+                img.src = url;
+                img.style.display = 'block';
+            } else {
+                alert('Error generating face. Please try again.');
+            }
+        }
+    </script>
+</body>
+</html>
+ 
