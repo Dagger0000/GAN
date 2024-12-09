@@ -2,8 +2,7 @@ from fastapi import FastAPI, Request
 from fastapi.responses import HTMLResponse, Response
 import torch
 import sys
-
-sys.path.append("C:\Style GAN")
+sys.path.append("C:\\Style GAN")
 from models.generator import Generator
 import io
 from PIL import Image
@@ -11,13 +10,13 @@ from PIL import Image
 app = FastAPI()
 
 generator = Generator(latent_dim=100)
-generator.load_state_dict(torch.load("C:/Style GAN/checkpoints/generator.pth"))
+generator.load_state_dict(torch.load("C:/Style-GAN/checkpoints/generator.pth"))
 generator.eval()
 
 
 @app.get("/")
 async def home(request: Request):
-    with open("c:/Style GAN/web/templates/index.html", "r") as file:
+    with open("c:/Style-GAN/web/templates/index.html", "r") as file:
         html = file.read()
     return HTMLResponse(content=html, status_code=200)
 
