@@ -30,7 +30,6 @@ def test_discriminator_output_shape(discriminator):
     assert validity.shape == (1, 1)
 
 # tests/test_models.py
-
 def test_name_to_latent():
     """Test the name-to-latent vector conversion utility."""
     from utils.name_to_latent import name_to_latent_vector as name_to_latent
@@ -40,7 +39,6 @@ def test_name_to_latent():
     latent_vector = name_to_latent(name, latent_dim)
     assert latent_vector.shape == (1, latent_dim), f"Expected (1, {latent_dim}), got {latent_vector.shape}"
     assert isinstance(latent_vector, torch.Tensor), "Latent vector should be a torch.Tensor"
-
 
 
 def test_latent_determinism():

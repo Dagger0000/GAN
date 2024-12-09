@@ -1,9 +1,8 @@
 import torch
 import sys
-
-sys.path.append("C:\Style GAN")
 import torch.nn as nn
 import torch.optim as optim
+sys.path.append("C:\\Style GAN")
 from torch.utils.data import DataLoader
 from torchvision import datasets, transforms
 from models.generator import Generator
