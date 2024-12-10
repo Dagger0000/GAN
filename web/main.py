@@ -10,7 +10,7 @@ from PIL import Image
 app = FastAPI()
 
 generator = Generator(latent_dim=100)
-generator.load_state_dict(torch.load("C:/GAN/checkpoints/generator.pth"))
+generator.load_state_dict(torch.load("/checkpoints/generator.pth"))
 generator.eval()
 
 
