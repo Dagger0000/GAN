@@ -66,6 +66,10 @@ jobs:
           pip install --no-cache-dir pillow  # Explicitly install Pillow
           pip install tox  # Install tox
 
+      - name: Download Checkpoint
+        run: |
+          wget https://C:/GAN/checkpoints/generator.pth -P checkpoints/
+
       - name: Verify Installation
         run: |
           python -c "import torch; import torchvision; from PIL import Image; import fastapi; import uvicorn; import numpy; print('All packages are installed correctly.')"
