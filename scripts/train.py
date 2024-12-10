@@ -2,7 +2,7 @@ import torch
 import sys
 import torch.nn as nn
 import torch.optim as optim
-sys.path.append("C:\\Style GAN")
+sys.path.append("C:\\GAN")
 from torch.utils.data import DataLoader
 from torchvision import datasets, transforms
 from models.generator import Generator
@@ -23,7 +23,7 @@ transform = transforms.Compose(
     ]
 )
 
-dataset = datasets.ImageFolder(root="C:/Style GAN/data/processed", transform=transform)
+dataset = datasets.ImageFolder(root="C:/GAN/data/processed", transform=transform)
 dataloader = DataLoader(dataset, batch_size=batch_size, shuffle=True)
 
 # Model initialization
@@ -71,7 +71,7 @@ for epoch in range(epochs):
 
     # Save model checkpoints
     if epoch % 100 == 0:
-        torch.save(generator.state_dict(), "C:/Style GAN/checkpoints/generator.pth")
+        torch.save(generator.state_dict(), "C:/GAN/checkpoints/generator.pth")
         torch.save(
-            discriminator.state_dict(), "C:/Style GAN/checkpoints/discriminator.pth"
+            discriminator.state_dict(), "C:/GAN/checkpoints/discriminator.pth"
         )
