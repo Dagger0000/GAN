@@ -2,7 +2,7 @@ import pytest
 import torch
 import sys
 
-sys.path.append("C:\\Style GAN")
+sys.path.append("C:\\GAN")
 from models.generator import Generator
 from models.discriminator import Discriminator
 
