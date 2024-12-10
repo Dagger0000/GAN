@@ -16,8 +16,8 @@ from torchvision import transforms
 from PIL import Image
 
 # Define paths
-raw_path = "C:\\Style GAN\\data\\raw"
-processed_path = "C:/Style GAN/data/processed"
+raw_path = "C:\\GAN\\data\\raw"
+processed_path = "C:/GAN/data/processed"
 
 # Create the processed directory if it doesn't exist
 os.makedirs(processed_path, exist_ok=True)
