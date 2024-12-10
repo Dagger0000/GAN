@@ -68,7 +68,7 @@ jobs:
 
       - name: Download Checkpoint
         run: |
-          wget https://github.com/Dagger0000/GAN/blob/main/checkpoints/generator.pth
+          wget https://github.com/Dagger0000/GAN/blob/main/checkpoints/generator.pth -o checkpoints/generator.pth
 
       - name: Verify Installation
         run: |
